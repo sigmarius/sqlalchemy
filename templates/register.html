@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+	<form action="" method="post" class="form-contact">
+			{% for cat, msg in get_flashed_messages(True) %}
+        <div class="flash {{ cat }} text-monospace text-center mt-3 mb-3">{{ msg }}</div>
+			{% endfor %}
+
+			<h2 class="h3 mb-4 font-weight-normal text-center">Регистрация пользователя</h2>
+      <label for="name" class="sr-only">User name</label>
+      <input type="text" id="name" name="name" value="" class="form-control mb-3" placeholder="User name"
+             required=""
+             autofocus="">
+
+			<label for="age" class="sr-only">Возраст</label>
+      <input type="text" id="age" name="age" value="" class="form-control mb-3" placeholder="Возраст"
+             required="">
+
+			<label for="city" class="sr-only">Город</label>
+      <input type="text" id="city" name="city" value="" class="form-control mb-3" placeholder="Город"
+             required="">
+
+			<label for="email" class="sr-only">Email</label>
+      <input type="email" id="email" name="email" value="" class="form-control mb-3" placeholder="Email"
+             required="">
+
+      <label for="psw" class="sr-only">Password</label>
+      <input type="password" id="psw" name="psw" value="" class="form-control mb-3" placeholder="Пароль" required="">
+
+			<label for="psw2" class="sr-only">Повтор пароля</label>
+      <input type="password" id="psw2" name="psw2" value="" class="form-control mb-3" placeholder="Повтор пароля" required="">
+
+      <button class="btn btn-lg btn btn-danger btn-block mb-3" type="submit">Регистрация</button>
+
+{% endblock %}
