@@ -1,4 +1,18 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+	<h2 class="h3 mb-4 font-weight-normal text-center">Пользователи приложения</h2>
+
+	<ul class="list-group form-contact">
+		{% for l in list %}
+			<li class="list-group-item">
+				<p class="font-weight-bold">id: {{ l.id }}, email: {{ l.email }}</p>
+				<ul class="list-unstyled">
+					<li>Имя: {{ l.pr.name }}</li>
+					<li>Возраст: {{ l.pr.age }}</li>
+					<li>Город: {{ l.pr.city }}</li>
+				</ul>
+			</li>
+		{% endfor %}
+	</ul>
 {% endblock %}

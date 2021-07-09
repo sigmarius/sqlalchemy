@@ -19,6 +19,8 @@ class Users(db.Model):
     email = db.Column(db.String(50), unique=True)
     psw = db.Column(db.String(500), nullable=False)
     date = db.Column(db.DateTime, default=datetime.utcnow)
+    # подключение связанной таблицы 1 к 1
+    pr = db.relationship('Profiles', backref='users', uselist=False)
 
     def __repr__(self):
         return f"<users {self.id}>"
@@ -37,10 +39,29 @@ class Profiles(db.Model):
 
 # создание БД и таблиц в БД => Python Console => from app import db => db.create_all()
 
+# посмотреть как все работает, не меняя БД => Python Console => from app import db, Users, Profiles
+# выбор всех записей из таблицы => Users.query.all()
+# выбор первой записи из таблицы => Users.query.first()
+# выбор записи по определенному критерию => Users.query.filter_by(id = 1).all()
+# или Users.query.filter(Users.id > 1).all()
+# ограничение на max число возвращаемых записей => Users.query.limit(2).all()
+# сортировка записей => Users.query.order_by(Users.email).all()
+# сортировка записей по убыванию => Users.query.order_by(Users.email.desc()).all()
+# пользователь по определенному значению ключа => Users.query.get(2)
+
+# вывод данных из связанных таблиц =>
+# res = db.session.query(Users, Profiles).join(Profiles, Users.id == Profiles.user_id).all()
+
 
 @app.route('/')
 def index():
-    return render_template('index.html', title='Главная')
+    info = []
+    try:
+        info = Users.query.all()
+    except:
+        print("Ошибка чтения из БД")
+
+    return render_template('index.html', title='Главная', list=info)
 
 
 @app.route('/register', methods=('POST', 'GET'))

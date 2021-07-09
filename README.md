@@ -2,5 +2,15 @@
 
 ### Включает:
 + Создание таблиц users, profiles
-+ Настройка шаблонов для регистрации
-+ Реализовация добавления записей в таблицы БД
++ Создание шаблонов Главной страницы и Регистрации пользователей
++ Реализация добавления записей в таблицы БД
++ Операции с таблицами через Flask-SQLAlchemy:
+  + query.all,
+  + query.first,
+  + query.filter_by,
+  + query.filter,
+  + query.limit, 
+  + query.order_by,
+  + query.get,
+  + db.session.query().join,
+  + db.relationship.
