@@ -1,6 +1,6 @@
 from jinja2 import Template
 
-# sum(iterable, attribute=None, start=0) => вычисление суммы поля коллекции
+# sum(iterable, attribute=None, start=0) => вычисление суммы поля коллекции, start => прибавляется к вычисленному
 
 cars = [
     {'model': 'Audi', 'price': 500},
