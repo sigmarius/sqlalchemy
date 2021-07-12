@@ -12,6 +12,7 @@ def loadTpl(path):
     else:
         return ''' Data: {{ u }}'''
 
+
 file_loader = FileSystemLoader('templates')
 function_loader = FunctionLoader(loadTpl)
 
@@ -24,5 +25,6 @@ tm2 = env2.get_template('environment.html')
 
 msg = tm.render(users=persons)
 msg2 = tm2.render(u=persons[0])
+msg3 = tm.render(domain='localhost', title='Подключение шаблонов Jinja2', users=persons)
 
-print(msg2)
+print(msg3)

@@ -1,18 +1,16 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="Description" content="Pure Flask-SQL Alchemy" />
-	<title>Environment</title>
-</head>
+{% from 'dialogs.htm' import dialog as d %}
+{# или => {% import 'dialogs.htm' as d %} #}
+{% include ['header.html', 'layout.html'] ignore missing %}
+
 <body>
+<h1>Site content</h1>
 <ul>
 	{% for u in users -%}
 	<li>{{ u.name }}</li>
 	{% endfor -%}
 </ul>
-</body>
-</html>
+
+{{ d('Attention', 'This is a test dialog!') }}
+{# или => {{ d.dialog('Attention', 'This is a test dialog!') }}#}
+
+{% include 'footer.html' %}

@@ -20,5 +20,5 @@
  + **jinja-macro.py** - Macro-определения, вложенные макросы caller
  + **jinja-environment.py** - Класс Enviroment. Способы загрузки шаблонов: FileSystemLoader, PackageLoader, 
   DictLoader, FunctionLoader, ChoiceLoader, ModuleLoader
- + Конструкции include и import 
+ + Конструкции include и import, ключевое слово ignore missing 
   

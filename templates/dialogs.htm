@@ -1,0 +1,7 @@
+{% macro dialog(title, msg='') -%}
+<section class="dialog">
+<p class="title">{{ title }}</p>
+<p class="message">{{ msg }}</p>
+<p><button type="button">Close dialog</button></p>
+</section>
+{%- endmacro %}
