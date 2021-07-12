@@ -17,5 +17,8 @@
    + Фильтры sum, max, min, replace, random
    + Блок filter   
      {% filter <название фильтра>%}<фрагмент для применения>{% endfilter %}
- + **jinja-macro.py** - Macro-определения, вложенные макросы caller    
+ + **jinja-macro.py** - Macro-определения, вложенные макросы caller
+ + **jinja-environment.py** - Класс Enviroment. Способы загрузки шаблонов: FileSystemLoader, PackageLoader, 
+  DictLoader, FunctionLoader, ChoiceLoader, ModuleLoader
+ + Конструкции include и import 
   
